@@ -10,14 +10,15 @@ on:
     - 'UnityProject/**'
     - '.github/workflows/main.yml'
     - 'Docker/**'
-#  pull_request:
-#    branches:
-#    - develop
-#    - master
-#    paths:
-#    - 'Tools/UnityLicense.ulf'
-#    - 'UnityProject/**'
-#    - '.github/workflows/main.yml'
+  pull_request:
+    branches:
+    - develop
+    - master
+    paths:
+    - 'Tools/UnityLicense.ulf'
+    - 'UnityProject/**'
+    - '.github/workflows/main.yml'
+
 
 jobs:
 
@@ -34,8 +35,8 @@ jobs:
   #   - Replace UnityLicense.ulf in the Tools directory with it.
   #   - Make sure LICENSE_FILE_PATH in the 'Setup license' step still points to it.
 
-  # # Request license file job
-  # requestManualActivationFile:
+  # #Request license file job
+  #requestManualActivationFile:
   #   name: Request manual activation file
   #   runs-on: ubuntu-latest
   #   steps:
@@ -44,10 +45,10 @@ jobs:
   #       uses: webbertakken/unity-request-manual-activation-file@v1.1
   #       id: getManualLicenseFile
   #       with:
-  #         unityVersion: 2019.2.19f1
+  #         unityVersion: 2019.3.8f1
   #     # Upload artifact (Unity_v20XX.X.XXXX.alf)
   #     - name: Expose as artifact
-  #       uses: actions/upload-artifact@v1
+  #      uses: actions/upload-artifact@v1
   #       with:
   #         name: ${{ steps.getManualLicenseFile.outputs.filePath }}
   #         path: ${{ steps.getManualLicenseFile.outputs.filePath }}
@@ -62,7 +63,7 @@ jobs:
         projectPath:
           - UnityProject
         unityVersion:
-          - 2019.2.19f1
+          - 2019.3.8f1
         targetPlatform:
           - StandaloneWindows64
           - StandaloneOSX
